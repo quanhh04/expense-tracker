@@ -1,12 +1,8 @@
 services:
   - type: worker
     name: expense-tracker-bot
-    runtime: shell
-    buildCommand: chmod +x build.sh && ./build.sh
-    startCommand: python3.11 main.py
+    runtime: docker
     envVars:
-      - key: PYTHON_VERSION
-        value: 3.11.0
       - key: TELEGRAM_BOT_TOKEN
         sync: false
       - key: CHAT_ID

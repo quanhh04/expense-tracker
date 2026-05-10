@@ -1,0 +1,19 @@
+services:
+  - type: worker
+    name: expense-tracker-bot
+    runtime: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: python main.py
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.11.0
+      - key: TELEGRAM_BOT_TOKEN
+        sync: false
+      - key: CHAT_ID
+        sync: false
+      - key: GOOGLE_SHEET_NAME
+        sync: false
+      - key: GOOGLE_SHEET_TAB
+        sync: false
+      - key: GOOGLE_CREDENTIALS_JSON
+        sync: false
